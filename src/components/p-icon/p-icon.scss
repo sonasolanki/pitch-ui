@@ -1,0 +1,15 @@
+/**
+ * @prop --p-icon-color: Color of the icon
+ * @prop --p-icon-size: Size of the icon
+ */
+ :root {
+    --p-icon-color: var(--neutral-black);
+    --p-icon-size: 16px;
+  }
+
+  p-icon {
+    span {
+          color: var(--p-icon-color);
+          font-size: var(--p-icon-size);
+      }
+  }

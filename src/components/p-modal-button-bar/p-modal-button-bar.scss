@@ -1,0 +1,21 @@
+:root {
+    --p-modal-button-bar-bg-color: var(--neutral-white);
+    --p-modal-button-bar-spacing: var(--spacing-l) var(--spacing-xl) var(--spacing-xl);
+}
+
+p-modal-button-bar {
+    .p-modal-button-bar {
+        background-color: var(--p-modal-button-bar-bg-color);
+        display: flex;
+        justify-content: flex-start;
+        padding: var(--p-modal-button-bar-spacing);
+
+        p-button {
+            margin-right: var(--spacing-xl);
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+}

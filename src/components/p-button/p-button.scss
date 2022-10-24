@@ -1,0 +1,188 @@
+
+:root {
+    --p-button-background-color: transparent;
+
+    --p-button-cursor: pointer;
+    --p-button-font-size: var(--small-font-size);
+
+    --p-button-icon-margin: var(--spacing-m);
+    --p-button-padding: 0 var(--spacing-l);
+    --p-button-display: inline-flex;
+    --p-button-text-alignment: center;
+
+    --p-button-text-color: var(--neutral-black);
+    --p-button-text-justify: center;
+
+    --p-button-border-thickness: 2px;
+    --p-button-border-style: solid;
+    --p-button-border-color: transparent;
+
+    --p-button-border: var(--p-button-border-thickness) var(--p-button-border-style);
+
+    --p-button-active-border-color: currentColor;
+
+    --p-button-focus-background-color: transparent;
+    --p-button-focus-border-color: transparent;
+    --p-button-focus-border: var(--p-button-border-thickness) var(--p-button-border-style);
+
+    --p-button-selected-text-color: var(--accent-navy-blue);
+    --p-button-selected-background-color: var(--accent-navy-blue);
+    --p-button-selected-border-color: transparent;
+
+    --p-button-disabled-text-color: var(--neutral-steel);
+    --p-button-disabled-background-color: var(--neutral-gallery);
+    --p-button-disabled-border-color: transparent;
+
+    --p-button-selected-disabled-text-color: var(--neutral-white);
+    --p-button-selected-disabled-background-color: var(--neutral-mountain-mist);
+    --p-button-selected-disabled-border-color: transparent;
+
+    --p-button-height-standard: 40px;
+    --p-button-height-small: 32px;
+
+    // Progressive
+    --progressive-text-color: var(--neutral-white);
+    --progressive-background-color: var(--accent-navy-blue);
+    --progressive-border-color: var(--accent-navy-blue);
+    --progressive-background-focus-color: var(--accent-denim);
+    --progressive-focus-border-color: var(--accent-navy-blue);
+    --progressive-active-border-color: var(--accent-navy-blue);
+
+    // Destructive
+    --destructive-text-color: var(--neutral-white);
+    --destructive-background-color: var(--error-shadow);
+    --destructive-border-color: var(--error-shadow);
+    --destructive-background-focus-color: var(--error);
+    --destructive-focus-border-color: var(--error);
+    --destructive-active-border-color: var(--error-shadow);
+
+    // Regressive
+    --regressive-text-color: var(--neutral-black);
+    --regressive-background-color: var(--neutral-white);
+    --regressive-border-color: var(--neutral-steel);
+    --regressive-background-focus-color: var(--neutral-gallery);
+    --regressive-focus-border-color: var(--neutral-black);
+    --regressive-active-border-color: var(--neutral-black);
+
+    // Ghost
+    --ghost-text-color: var(--accent-navy-blue);
+    --ghost-background-color: transparent;
+    --ghost-border-color: transparent;
+    --ghost-background-focus-color: var(--accent-hawkes-blue);
+    --ghost-focus-border-color: transparent;
+    --ghost-active-border-color: var(--accent-navy-blue);
+
+    // Action
+    --action-text-color: var(--accent-navy-blue);
+    --action-background-color: var(--neutral-white);
+    --action-border-color: var(--accent-navy-blue);
+    --action-background-focus-color: var(--accent-hawkes-blue);
+    --action-focus-border-color: var(--accent-denim);
+    --action-active-border-color: var(--accent-denim);
+
+    // Naked
+    --naked-text-color: var(--neutral-black);
+    --naked-background-color: transparent;
+    --naked-border-color: transparent;
+    --naked-background-focus-color: var(--neutral-gallery);
+    --naked-focus-border-color: transparent;
+    --naked-active-border-color: transparent;
+}
+
+$button-classes: ('progressive','destructive','ghost','action','regressive','naked');
+@mixin buttonClasses() {
+    @each $item in $button-classes {
+        &.#{$item} {
+            --p-button-text-color: var(--#{$item}-text-color);
+            --p-button-background-color: var(--#{$item}-background-color);
+            --p-button-border-color: var(--#{$item}-border-color);
+            --p-button-focus-background-color: var(--#{$item}-background-focus-color);
+            --p-button-focus-border-color: var(--#{$item}-focus-border-color);
+            --p-button-active-border-color: var(--#{$item}-active-border-color);
+        }
+    }
+}
+
+p-button {
+    .p-button {
+        color: var(--p-button-text-color);
+        background-color: var(--p-button-background-color);
+        border: var(--p-button-border);
+        border-color: var(--p-button-border-color);
+        border-radius: 20px; //? should this follow our radius definitions?
+        align-items: var(--p-button-text-alignment);
+        display: var(--p-button-display);
+        font-size: var(--p-button-font-size);
+        height: var(--p-button-height-standard);
+        justify-content: var(--p-button-text-justify);
+        outline: none;
+        padding: var(--p-button-padding);
+        position: relative;
+        white-space: nowrap;
+        cursor: var(--p-button-cursor);
+        font-weight: weight(bold);
+
+        &:focus, &:hover {
+            &:not(.selected) {
+                background-color: var(--p-button-focus-background-color);
+                border: var(--p-button-border);
+                border-color: var(--p-button-focus-border-color);
+            }
+        }
+
+        &:disabled, [disabled] {
+            background-color: var(--p-button-disabled-background-color);
+            border: var(--p-button-border);
+            border-color: var(--p-button-disabled-border-color);
+            color: var(--p-button-disabled-text-color);
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        // TODO: to support button group
+        // &.selected {
+        //     border: var(--p-button-border);
+        //     border-color: var(--p-button-selected-border-color);
+        //     background-color: var(--p-button-selected-background-color);
+        //     color: var(--p-button-selected-text-color);
+
+        //     &:disabled, [disabled] {
+        //         background-color: var(--p-button-selected-disabled-background-color);
+        //         border: var(--p-button-border);
+        //         border-color: var(--p-button-selected-disabled-border-color);
+        //         color: var(--p-button-selected-disabled-text-color);
+        //     }
+        // }
+
+        &.small {
+            height: var(--p-button-height-small);
+        }
+
+        f-loading {
+            margin-left: var(--p-button-icon-margin);
+        }
+
+        p-icon {
+            margin-left: var(--p-button-icon-margin);
+
+            svg {
+                margin: 0;
+            }
+
+            &.left {
+                margin-left: 0;
+                margin-right: var(--p-button-icon-margin);
+                order: -1;
+            }
+
+            &.icon-only {
+                margin: 0
+            }
+
+            --p-icon-color: currentColor;
+            --p-icon-size: var(--base-font-size);
+        }
+
+        @include buttonClasses();
+    }
+}
