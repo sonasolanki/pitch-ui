@@ -4,7 +4,7 @@
 * @prop --p-alert-width: specific width
 */
 :root {
-    --p-alert-display: inline;
+    --p-alert-display: inline-flex;
     --p-alert-min-width: 288px;
     --p-alert-width: auto;
 }
@@ -41,7 +41,7 @@ p-alert {
             background-color: var(--info-background);
 
             p-icon {
-                --p-icon-color: var(--warning);
+                --p-icon-color: var(--info);
             }
         }
 
