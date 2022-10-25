@@ -8,19 +8,19 @@ import { getUUId } from '../../utils/utils';
   styleUrl: 'p-button.scss',
   shadow: false
 })
-export class FButton {
+export class PButton {
   /**
    * text for button
    *
    * @type {string}
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() text: string;
 
   /**
    * disabled state of button
    *
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() disabled = false;
 
@@ -28,7 +28,7 @@ export class FButton {
    * variant of button
    *
    * @type {('action' | 'destructive' | 'ghost' | 'progressive' | 'regressive')}
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() variant: 'action' | 'destructive' | 'ghost' | 'progressive' | 'regressive' | 'naked' = 'progressive';
 
@@ -36,7 +36,7 @@ export class FButton {
    * type of button
    *
    * @type {('button' | 'reset' | 'submit')}
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() type: 'button' | 'reset' | 'submit' = 'button';
 
@@ -44,7 +44,7 @@ export class FButton {
    * size of button
    *
    * @type {('small' | 'medium' | 'large')}
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
 
@@ -52,7 +52,7 @@ export class FButton {
    * config for icon on button
    *
    * @type {IIconConfig}
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() iconConfig: IIconConfig;
 
@@ -60,14 +60,14 @@ export class FButton {
    * is the button an icon only button
    *
    *
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() isIconOnly = false;
 
   /**
    * does the button have a loader displayed
    *
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() hasLoader = false;
 
@@ -75,7 +75,7 @@ export class FButton {
    * uuid for button
    *
    * @type {string}
-   * @memberof FButton
+   * @memberof PButton
    */
   @Prop() uuid: string;
 

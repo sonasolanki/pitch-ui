@@ -1,6 +1,6 @@
 import { Component, h, Listen, Prop, State } from '@stencil/core';
 import classNames from 'classnames';
-import { IFButtonInterface } from '../p-button/p-button.interface';
+import { IPButtonInterface } from '../p-button/p-button.interface';
 @Component({
   tag: 'p-modal',
   styleUrl: 'p-modal.scss',
@@ -16,10 +16,10 @@ export class PModal {
 /**
  * button array for modal button bar
  *
- * @type {Array<FButtonSettings>}
+ * @type {Array<PButtonSettings>}
  * @memberof PModal
  */
-@Prop() buttons?: Array<IFButtonInterface> = [];
+@Prop() buttons?: Array<IPButtonInterface> = [];
 
 /**
  * close text for close button

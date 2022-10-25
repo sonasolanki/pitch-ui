@@ -11,12 +11,12 @@ import { getUUId } from '../../utils/utils';
   shadow: false
 })
 
-export class FAlert {
+export class PAlert {
   /**
    * uuid of close button
    *
    * @type {string}
-   * @memberof FAlert
+   * @memberof PAlert
    */
   @Prop() closeUuid?: string;
 
@@ -24,7 +24,7 @@ export class FAlert {
    * is alert in container
    *
    * @type {boolean}
-   * @memberof FAlert
+   * @memberof PAlert
    */
   @Prop() inContainer? = false;
 
@@ -32,7 +32,7 @@ export class FAlert {
    * is alert dismissable
    *
    * @type {boolean}
-   * @memberof FAlert
+   * @memberof PAlert
    */
   @Prop() isDismissable? = false;
 
@@ -40,7 +40,7 @@ export class FAlert {
    * variant of alert
    *
    * @type {('error' | 'info' | 'success' | 'warning')}
-   * @memberof FAlert
+   * @memberof PAlert
    */
   @Prop() variant: 'error' | 'info' | 'success' | 'warning' | 'naked' = 'info';
 
@@ -58,7 +58,7 @@ export class FAlert {
    * emits {dismissed: true} object when close button is clicked
    *
    * @type {EventEmitter}
-   * @memberof FAlert
+   * @memberof PAlert
    */
   @Event() dismiss: EventEmitter;
 

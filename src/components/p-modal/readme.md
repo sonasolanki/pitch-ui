@@ -13,7 +13,7 @@ A modal is an interface element that appears over other content. It requires an 
 
 | Property     | Attribute     | Description                             | Type                                                                                                                 | Default     |
 | ------------ | ------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `buttons`    | --            | button array for modal button bar       | `IFButtonInterface[]`                                                                                                | `[]`        |
+| `buttons`    | --            | button array for modal button bar       | `IPButtonInterface[]`                                                                                                | `[]`        |
 | `closeText`  | `close-text`  | close text for close button             | `string`                                                                                                             | `undefined` |
 | `hasClose`   | `has-close`   | is there a close button (default: true) | `boolean`                                                                                                            | `true`      |
 | `headerText` | `header-text` | header text for modal                   | `string`                                                                                                             | `undefined` |
